@@ -26,10 +26,10 @@ function [r_c_estimates,results,MMat,NCL,AllSizesCell,AllS1,AllS2] = rc_function
 %   Outputs:
 %
 %   In r_c_estimates:
-%       rc_S2,    threshold r at which the size of the second largest cluster reaches its maximum value
-%       rc_sigm_S1,   threshold r at which the variance of the size of the largest cluster reaches its maximum value
-%       rc_LG,    threshold r at which the characteristic path lenght of the graph reaches its maximum value
-%       rc_Skew,  threshold r at which the skewness of the cluster sizes reaches its maximum value
+%       S2,    threshold r at which the size of the second largest cluster reaches its maximum value
+%       sigm_S1,   threshold r at which the variance of the size of the largest cluster reaches its maximum value
+%       LG,    threshold r at which the characteristic path lenght of the graph reaches its maximum value
+%       Skew,  threshold r at which the skewness of the cluster sizes reaches its maximum value
 %       cvdeg,  threshold r at which the coefficient of variation of the degree distribution reaches its maximum value
 %
 %   In results:
