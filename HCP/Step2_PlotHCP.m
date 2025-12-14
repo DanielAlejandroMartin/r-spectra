@@ -190,7 +190,7 @@ plot(AC1(1:64),Allrc_LG(1:64),'.')
 
 xlabel("AC(1)")
 ylabel("r_c")
-legend("S2" , "\sigma S1", "L(G)","cvd")
+legend("S2" , "\sigma S1", "L(G)")
 
 %Export Data
 
@@ -358,11 +358,11 @@ subplot(212)
 plot(10*dr:dr:1.5,sS1)
 grid on
 xlabel("r/r_c  [L(G)]")
-ylabel("s.d. (S_1"))
+ylabel("s.d. (S_1)")
 
 % Export Data
 
-TT=table(normrc(1:10,:)',AllS1(1:10,:)'/N_Rois)
+TT=table(normrc(1:10,:)',AllS1(1:10,:)'/N_Rois);
 writetable(TT,'FiguresData/fS8A_S1_all.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 
 
