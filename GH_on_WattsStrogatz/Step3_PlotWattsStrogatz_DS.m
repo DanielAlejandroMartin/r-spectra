@@ -29,10 +29,6 @@ for runx=[1:40]
         tic
         ACx=autocorr(Act);
         AC1=ACx(2); % First autocorrelation coefficient
-
-        
-        
-        rc.sigm_S1=rc.dS1
         
         
         AllAC1(run,tindex)=AC1;
