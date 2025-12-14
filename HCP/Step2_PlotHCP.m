@@ -228,72 +228,64 @@ writetable(TT,'FiguresData/fS1D_Ages_all.dat','WriteVariableNames',false,'WriteR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Figure SM5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clear all
 load("HCP_ses1.mat")
-figure(1500)
-for i=1:100
-    plot(meandeg(i,:),AllS1(i,:))
-    %plot(AllS1(i,:),sddeg(i,:)./meandeg(i,:))
-    hold on
+rvals=[0:0.001:1];
+figure(1500) %Panel A
+plot(rvals,sddegexample)
+
+
+
+figure(1501) %Panel B
+%Compute the peak of the S.D. of the degree.
+
+for subj=1:64 %just compute for 64 subjects
+   
+        [~,idx]=max(squeeze( Allsddeg(subj,:)));
+    Allrc_sddeg(subj)=rvals(idx);
 end
 
-
-figure(1501)
-for i=1:size(sddeg,1)
-    if i<20
-        plot(rvals,sddeg(i,:)./meandeg(i,:))
-        %plot(rvals,sddeg(i,:))
-    end
-    [a,b]=max(sddeg(i,:)./meandeg(i,:))
-    Allrc_sddegNORM(i)=rvals(b);
-    [a,b]=max(sddeg(i,:))
-    Allrc_sddeg(i)=rvals(b);
-    hold on
-end
-
-TT=table(rvals',sddeg(1:10,:)');
-writetable(TT,'FiguresData/fS5A_sddeg.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
-
-TT=table(rvals',(sddeg(1:10,:)./meandeg(1:10,:))');
-writetable(TT,'FiguresData/fS5A_sddegnorm.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
-
-
-figure(182)
-for i=1:50
-    subplot(221)
-    plot(rvals/Allrc_S2(i),AllS1(i,:))
-    hold on
-    subplot(222)
-    plot(rvals/Allrc_sigm_S1(i),AllS1(i,:))
-    hold on
-    subplot(223)
-    plot(rvals/Allrc_LG(i),AllS1(i,:))
-    hold on
-    subplot(224)
-    plot(rvals/Allrc_sddegNORM(i),AllS1(i,:))
-    hold on
-end
-
-figure(183)
-plot(Allrc_sddeg,Allrc_LG, '.')
+plot(Allrc_sddeg(1:64),Allrc_S2(1:64),'.')
 hold on
-plot(Allrc_sddeg,Allrc_S2, '.')
-plot(Allrc_sddeg,Allrc_sigm_S1, '.')
+plot(Allrc_sddeg(1:64),Allrc_sigm_S1(1:64),'.')
+plot(Allrc_sddeg(1:64),Allrc_LG(1:64),'.')
+xlabel("r_c [\sigma [k]]")
+ylabel("r_c")
 
 
-figure(184)
-plot(Allrc_sddegNORM,Allrc_LG, '.')
+
+figure(1502) %Panel C
+plot(rvals,cvdegexample)
+xlabel("r");ylabel("\sigma [k]/<k>")
+
+figure(1503) %Panel D
+plot(Allrc_cvdeg(1:64),Allrc_S2(1:64),'.')
 hold on
-plot(Allrc_sddegNORM,Allrc_S2, '.')
-plot(Allrc_sddegNORM,Allrc_sigm_S1, '.')
+plot(Allrc_cvdeg(1:64),Allrc_sigm_S1(1:64),'.')
+plot(Allrc_cvdeg(1:64),Allrc_LG(1:64),'.')
+xlabel("r_c [\sigma [k]/<k>]")
+ylabel("r_c")
+
+
+
+% Export Data
+
+TT=table(rvals',sddegexample');
+writetable(TT,'FiguresData/fS5A.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 
 
 
 TT=table(Allrc_sddeg(1:64)',Allrc_S2(1:64)',Allrc_sigm_S1(1:64)',Allrc_LG(1:64)');
-writetable(TT,'FiguresData/fS5A_sddegCORREL.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
+writetable(TT,'FiguresData/fS5D.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 
 
-TT=table(Allrc_sddegNORM(1:64)',Allrc_S2(1:64)',Allrc_sigm_S1(1:64)',Allrc_LG(1:64)');
-writetable(TT,'FiguresData/fS5A_sddegCORREL_NORM.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
+
+TT=table(rvals',cvdegexample');
+writetable(TT,'FiguresData/fS5C.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
+
+
+TT=table(Allrc_cvdeg(1:64)',Allrc_S2(1:64)',Allrc_sigm_S1(1:64)',Allrc_LG(1:64)');
+writetable(TT,'FiguresData/fS5D.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

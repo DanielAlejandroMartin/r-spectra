@@ -55,6 +55,7 @@ for ses= [1 5] % Number of Session 1-4. Sesion 5 is for all concatenated
         
         AllS1(R,:)=results.S1;
         AllS2(R,:)=results.S2;
+        Allsddeg(R,:)=results.sddeg;
         AllNCL(R,:)=NCL;
         
         
@@ -106,5 +107,5 @@ for ses= [1 5] % Number of Session 1-4. Sesion 5 is for all concatenated
     
     % Save values, for results visualization run the routine 'Step2_PlotHCP.m'
     
-    save(sprintf('HCP_ses%d.mat',ses),'subjCode','Allrc_S2','Allrc_sigm_S1','Allrc_LG','Allrc_cvdeg','AC1','S1example','S2example','sigm_S1example','LGexample','cvdegexample','Npat','Meanrc_S2','SDrc_S2','AllS1','AllS2','AllNCL','Allpc_sp','Allpc_mom')
+    save(sprintf('HCP_ses%d.mat',ses),'subjCode','Allrc_S2','Allrc_sigm_S1','Allrc_LG','Allrc_cvdeg','AC1','S1example','S2example','sigm_S1example','LGexample','sddegexample','cvdegexample','Npat','Meanrc_S2','SDrc_S2','AllS1','AllS2','AllNCL','Allsddeg','Allpc_sp','Allpc_mom')
 end %Ses
