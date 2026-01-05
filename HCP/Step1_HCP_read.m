@@ -90,11 +90,18 @@ for ses= [1 5] % Number of Session 1-4. Sesion 5 is for all concatenated
     Ages = datatable.Age(loc) ;
     %cell2mat(ages)==cell2mat(agedix(1))
     agedix=["22-25", "26-30", "31-35", "36+"];
-    agedix(1)==Ages;
+    %agedix(1)==Ages;
+    
+   AgeGroup(agedix(1)==Ages)=1;
+AgeGroup(agedix(2)==Ages)=2;
+AgeGroup(agedix(3)==Ages)=3;
+AgeGroup(agedix(4)==Ages)=3; %subjects of age 36 are gropued into group 31-35.
+  
+clear subj  Npat Meanrc_S2 SDrc_S2 Meanrc_sigm_S1 SDrc_sigm_S1 Meanrc_LG  SDrc_LG
     
     % Relate the rc with age for each subject
-    for ii=1:4
-        subj=  agedix(ii)==Ages;
+    for ii=1:3
+        subj=  AgeGroup==ii;
         Npat(ii) = sum(subj);
         Meanrc_S2(ii)=mean(Allrc_S2(subj));
         SDrc_S2(ii)=std(Allrc_S2(subj));
@@ -107,5 +114,5 @@ for ses= [1 5] % Number of Session 1-4. Sesion 5 is for all concatenated
     
     % Save values, for results visualization run the routine 'Step2_PlotHCP.m'
     
-    save(sprintf('HCP_ses%d.mat',ses),'subjCode','Allrc_S2','Allrc_sigm_S1','Allrc_LG','Allrc_cvdeg','AC1','S1example','S2example','sigm_S1example','LGexample','sddegexample','cvdegexample','Npat','Meanrc_S2','SDrc_S2','AllS1','AllS2','AllNCL','Allsddeg','Allpc_sp','Allpc_mom')
+    save(sprintf('HCP_ses%d.mat',ses),'subjCode','Allrc_S2','Allrc_sigm_S1','Allrc_LG','Allrc_cvdeg','AC1','S1example','S2example','sigm_S1example','LGexample','sddegexample','cvdegexample','Npat','Meanrc_S2','SDrc_S2','AllS1','AllS2','AllNCL','Allsddeg','Allpc_sp','Allpc_mom','AgeGroup')
 end %Ses

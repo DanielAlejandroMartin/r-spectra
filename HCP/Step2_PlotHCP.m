@@ -120,11 +120,11 @@ TT=table(AC1',Allrc_S2',Allrc_sigm_S1',Allrc_LG');
 writetable(TT,'FiguresData/f3_rc_ses1_all.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(301) %Figure 3 Right
-errorbar([(22+25)/2 (26+30)/2 (31+35)/2 36 ], Meanrc_S2, SDrc_S2./sqrt(Npat-1), 'o-', 'LineWidth', 1.2, 'MarkerSize', 5);
+errorbar([(22+25)/2 (26+30)/2 (31+35)/2  ], Meanrc_S2, SDrc_S2./sqrt(Npat-1), 'o-', 'LineWidth', 1.2, 'MarkerSize', 5);
 
 %Export Data
 
-TT=table([(22+25)/2 (26+30)/2 (31+35)/2 36 ]', Meanrc_S2', SDrc_S2'./sqrt(Npat'-1));
+TT=table([(22+25)/2 (26+30)/2 (31+35)/2  ]', Meanrc_S2', SDrc_S2'./sqrt(Npat'-1));
 writetable(TT,'FiguresData/f3B_Ages_ses1.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 xlabel("Age (yr.)")
 ylabel("r_c (S2)")
@@ -214,13 +214,13 @@ TT=table(AC1',Allrc_S2',Allrc_sigm_S1',Allrc_LG');
 writetable(TT,'FiguresData/fS1CA_rcLG_all_all.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(1103)  %Figure SM1 down-right panel
-errorbar([(22+25)/2 (26+30)/2 (31+35)/2 36 ], Meanrc_S2, SDrc_S2./sqrt(Npat-1), 'o-', 'LineWidth', 1.2, 'MarkerSize', 5);
+errorbar([(22+25)/2 (26+30)/2 (31+35)/2 ], Meanrc_S2, SDrc_S2./sqrt(Npat-1), 'o-', 'LineWidth', 1.2, 'MarkerSize', 5);
 xlabel("Age (yr.)")
 ylabel("r_c (S2)")
 
 % Export Data
 
-TT=table([(22+25)/2 (26+30)/2 (31+35)/2 36 ]', Meanrc_S2', SDrc_S2'./sqrt(Npat'-1));
+TT=table([(22+25)/2 (26+30)/2 (31+35)/2]', Meanrc_S2', SDrc_S2'./sqrt(Npat'-1));
 writetable(TT,'FiguresData/fS1D_Ages_all.dat','WriteVariableNames',false,'WriteRowNames',false,'Delimiter', ' ')
 
 
