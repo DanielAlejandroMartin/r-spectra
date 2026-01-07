@@ -1,5 +1,5 @@
 % Code to generate  Figs. 1, 2, 3  SM1, SM5, SM7 and SM8  in Gabaldon et al,
-% "Heuristic Inferencence of the brain dynamical state from the r-spectrum of the correlation matrix"
+% "Data-driven inference of brain dynamical states from the r-spectrum of correlation matrices"
 
 clear all
 close all
