@@ -1,2 +1,2 @@
 # r-spectra
-Codes to generate  All Figs. in Gabaldon et al, "Heuristic Inferencence of the brain dynamical state from the r-spectrum of the correlation matrix"
+Codes to generate  all Figsures in Gabaldon et al, "Data-driven inference of brain dynamical states from the r-spectrum of correlation matrices"
