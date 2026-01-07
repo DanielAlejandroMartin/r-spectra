@@ -1,5 +1,5 @@
 %% Subroutine to compute path length
-%% Source Unknown!!
+
 
 function [L,Deg,Nedges] = characteristic_path_length(A)
     % Convert to graph object and use built-in distance calculator
