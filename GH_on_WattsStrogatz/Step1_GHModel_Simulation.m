@@ -11,7 +11,7 @@ close all
 N_nodes=5000;
 lambda=12.5; % parameter for the exponential distribuion of weights of the WS network
 p1=0.001;   % Spontaneous activation probability (it set a very small rate of background activity) 
-p2=0.2; %Dante Style    %  Refractory to Quiescent probability (it determine the lengh of time in which is active)
+p2=0.2;     %  Refractory to Quiescent probability (it determine the lengh of time in which is active)
 total=50000; % Number of iterations (time steps)
 Tvec=unique(sort([0.10:0.01:0.22 0.15:0.002:0.18])); % Vector of values of T: from 0.1 to 0.22. Zoomed about 0.175
 addpath('../functions')
@@ -86,7 +86,7 @@ for run=[1]
         % Delete the first 10% steps (let the system reach stationary state)
         S=S(fix(end/10)+1:end,:); 
 
-        S=int8(S>0); % Dante Style
+        S=int8(S>0); 
         sp=sparse(double(S)); % Convert to sparse matrix format for efficiency
         Act=mean(S');
         Fa=mean(Act'); % Fraction of active nodes (the order parameter of the model)
