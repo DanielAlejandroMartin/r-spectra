@@ -1,4 +1,4 @@
-% Code to generate data for Figs. 1, 2, 3 and SM1 in Gabaldon et al,
+% Code to generate data for Figs. 1, 2, 3, SM1, SM5, SM7 and SM8 in Gabaldon et al,
 % "Data-driven inference of brain dynamical states from the r-spectrum of correlation matrices"
 
 
