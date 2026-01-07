@@ -1,5 +1,5 @@
 % Code to generate data for Figs. 4, 5 and SM2 in Gabaldon et al, 
-% "Heuristic Inferencence of the brain dynamical state from the r-spectrum of the correlation matrix"
+% "Data-driven inference of brain dynamical states from the r-spectrum of correlation matrices"
 % Code edited from  "Haimovici et al, Brain Organization into Resting State Networks Emerges at
 % Criticality on a Model of the Human Connectome PRL 110, 178101 (2013)"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
