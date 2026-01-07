@@ -1,5 +1,5 @@
-%% Source Unknown!!
-
+%Function for estimating p_c, as described in 
+% Radicci F, "Predicting percolation thresholds in networks", Phys. Rev. E 91, 010801(R) (2015)
 
 function [p_c_estimates, results] = pc_function(A, varargin)
 % COMPUTE_PERCOLATION_THRESHOLD Estimate percolation threshold using multiple methods
