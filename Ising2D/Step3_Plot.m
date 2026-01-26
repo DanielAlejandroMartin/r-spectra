@@ -28,7 +28,7 @@ for T=Tvec
     AllMag(run,tindex)=mean(abs(mag))/(L*L); % Order parameter of the system
     Allrc_S2(run,tindex)=rc_S2;
     Allrc_sigm_S1(run,tindex)=rc_sigm_S1;
-    Allrc_LG(run,tindex)=rc_Skew;
+    Allrc_LG(run,tindex)=rc_LG;
     Allrc_Skew(run,tindex)=rc_Skew;
  
     
