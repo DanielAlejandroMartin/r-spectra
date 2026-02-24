@@ -85,7 +85,7 @@ for ses= [1 5] % Number of Session 1-4. Sesion 5 is for all concatenated
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Extract subject age range
-    datatable=readtable("HCP_YA_subjects_2025_10_15_11_40_46.csv");
+    datatable=readtable("HCP_YA_subjects_2025_10_15_11_40_46_Full.csv"); %Downloaded from https://balsa.wustl.edu/
     [tf, loc] = ismember(subjCode, datatable.Subject);
     Ages = datatable.Age(loc) ;
     %cell2mat(ages)==cell2mat(agedix(1))
